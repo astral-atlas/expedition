@@ -29,8 +29,8 @@ resource "aws_s3_bucket_object" "editor_bucket_objects" {
   bucket = aws_s3_bucket.website_bucket.bucket
   key    = each.value
 
-  source = "${path.module}/${public_files.result.baseDir}/${each.value}"
-  etag =    filemd5("${path.module}/${public_files.result.baseDir}/${each.value}")
+  source = "${path.module}/${data.external.public_files.result.baseDir}/${each.value}"
+  etag =    filemd5("${path.module}/${data.external.public_files.result.baseDir}/${each.value}")
 
   content_type = local.content-types[element(split(".", each.value), length(split(".", each.value)) - 1)]
 }
