@@ -1,7 +1,9 @@
 # !/usr/bin/env sh
-
 set -e
 
-make public > makelog.txt
+(
+  cd $(dirname $0)
+  make public
+) > /dev/null
 
 jq -n "{ baseDir: \"public\" }"
