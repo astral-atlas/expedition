@@ -1,5 +1,5 @@
 data "external" "public_files" {
-  program = ["sh", "buildPublic"]
+  program = ["sh", "${path.module}/buildPublic.sh"]
 }
 
 resource "aws_s3_bucket" "website_bucket" {
