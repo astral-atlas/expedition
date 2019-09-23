@@ -5,6 +5,9 @@
   "private": true,
   "author": "luke kaalim",
   "license": "MIT",
+  "scripts": {
+    "postversion": "git push --follow-tags"
+  },
   "devDependencies": {
     "@babel/core": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
