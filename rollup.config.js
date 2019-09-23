@@ -1,4 +1,5 @@
 const nodeResolve = require('rollup-plugin-node-resolve');
+const babel = require('rollup-plugin-babel');
 
 module.exports = {
   input: 'src/index.js',
@@ -8,5 +9,5 @@ module.exports = {
       format: 'esm',
     }
   ],
-  plugins: [nodeResolve()],
+  plugins: [nodeResolve(), babel({ exclude: 'node_modules/**' })],
 }
