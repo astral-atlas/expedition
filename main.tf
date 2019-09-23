@@ -19,7 +19,7 @@ locals {
     otf = "font/otf",
     css = "text/css"
   }
-  files = fileset("${path.module}/${public_files.result.baseDir}", "**/*.{png,html,js,otf,css}")
+  files = fileset("${path.module}/${data.external.public_files.result.baseDir}", "**/*.{png,html,js,otf,css}")
 }
 
 resource "aws_s3_bucket_object" "editor_bucket_objects" {
