@@ -30,10 +30,10 @@ export const Expedition = ({ sessions }/*: Props*/) => {
   const formattedDateString = new Intl.DateTimeFormat('en-US', options).format(new Date(nextSession.startTime));
   
   return (
-    <Fragment>
-      <h1>Next Session</h1>
-      <h2> {nextSession.title} </h2>
-      <time> {formattedDateString}</time>
-    </Fragment>
+    <div className="sessionPage">
+      <h1 className="pageTitle">Next Session</h1>
+      <h2 className="sessionTitle"> {nextSession.title} </h2>
+      <p className="sessionDescription"><time> {formattedDateString}</time></p>
+    </div>
   )
 };
