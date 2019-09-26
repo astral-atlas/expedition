@@ -41,6 +41,7 @@ jobs:
       - run:
           name: "Publish Release on GitHub"
           command: |
+            echo ghr -t ${GITHUB_TOKEN} -u astral-atlas -r expedition -c ${CIRCLE_SHA1} ${CIRCLE_TAG} ./artifacts/
             ghr -t ${GITHUB_TOKEN} -u astral-atlas -r expedition -c ${CIRCLE_SHA1} ${CIRCLE_TAG} ./artifacts/
 
 workflows:
